@@ -18,10 +18,10 @@ public class CatTest {
     }
 
     @Test
-    public void getFoodShouldReturnPredatorFood() throws Exception {
+    public void getFoodShouldReturnHerbivoreFood() throws Exception {
         // Arrange
         Feline felineMock = Mockito.mock(Feline.class);
-        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Мыши", "Птицы"));
+        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Трава", "Различные растения"));
 
         Cat cat = new Cat(felineMock);
 
@@ -29,6 +29,6 @@ public class CatTest {
         List<String> food = cat.getFood();
 
         // Assert
-        Assert.assertEquals(List.of("Мыши", "Птицы"), food);
+        Assert.assertEquals(List.of("Трава", "Различные растения"), food);
     }
 }
