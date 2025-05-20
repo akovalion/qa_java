@@ -32,4 +32,10 @@ public class FelineTest {
         int kittens = feline.getKittens(3);
         Assert.assertEquals(3, kittens);
     }
+
+    @Test
+    public void getFoodFromAnimalShouldReturnExpectedList() throws Exception {
+        List<String> food = feline.getFood("Травоядное");
+        Assert.assertEquals(List.of("Трава", "Различные растения"), food);
+    }
 }
